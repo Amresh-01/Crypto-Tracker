@@ -15,10 +15,6 @@ A real-time cryptocurrency tracking application built with React that provides l
 <img width="221" height="469" alt="Screenshot 2025-08-11 194741" src="https://github.com/user-attachments/assets/68cef77f-8479-40cf-9292-59f3553d60e1" />
 
 
-### Search Functionality
-![Search Feature](./screenshots/search-feature.png)
-
-
 ### Live Demo
 🚀 [View Live Application](https://cryptoleads.netlify.app/))
 
