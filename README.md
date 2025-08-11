@@ -1,6 +1,15 @@
 # Crypto Tracker - https://cryptoleads.netlify.app
 
-A real-time cryptocurrency tracking application built with React that provides live price updates and market data using the CoinGecko API.
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+[![CoinGecko API](https://img.shields.io/badge/CoinGecko-API-green?style=for-the-badge)](https://www.coingecko.com/en/api)
+
+
+A Real-time CryptoCurrency tracking application built with React that provides live price updates and market data using the CoinGecko API.
+
 
 ## 📸 Screenshots
 
@@ -17,12 +26,6 @@ A real-time cryptocurrency tracking application built with React that provides l
 
 ### Live Demo
 🚀 [View Live Application](https://cryptoleads.netlify.app/))
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-[![CoinGecko API](https://img.shields.io/badge/CoinGecko-API-green?style=for-the-badge)](https://www.coingecko.com/en/api)
 
 ## 🚀 Features
 
