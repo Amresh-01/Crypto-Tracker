@@ -1,6 +1,26 @@
-# Crypto Tracker
+# Crypto Tracker - https://cryptoleads.netlify.app
 
 A real-time cryptocurrency tracking application built with React that provides live price updates and market data using the CoinGecko API.
+
+## 📸 Screenshots
+
+### Desktop View
+![Desktop Screenshot]
+<img width="1365" height="684" alt="Screenshot 2025-08-11 192757" src="https://github.com/user-attachments/assets/33a2d25c-42f2-43cc-8737-bfc91d681f00" />
+<img width="1365" height="676" alt="Screenshot 2025-08-11 192850" src="https://github.com/user-attachments/assets/28b96268-9121-433a-b112-0156edc3c371" />
+
+
+### Mobile View
+<img width="220" height="475" alt="Screenshot 2025-08-11 194722" src="https://github.com/user-attachments/assets/ba4a775e-aecb-43d3-8d94-c1c782df3d65" />
+<img width="221" height="469" alt="Screenshot 2025-08-11 194741" src="https://github.com/user-attachments/assets/68cef77f-8479-40cf-9292-59f3553d60e1" />
+
+
+### Search Functionality
+![Search Feature](./screenshots/search-feature.png)
+
+
+### Live Demo
+🚀 [View Live Application](https://cryptoleads.netlify.app/))
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
@@ -52,7 +72,13 @@ Make sure you have the following installed on your machine:
    yarn install
    ```
 
-3. **Start the development server**
+3. **Install Tailwind CSS** (if not already configured)
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+   ```
+
+4. **Start the development server**
    ```bash
    npm run dev
    ```
@@ -61,7 +87,7 @@ Make sure you have the following installed on your machine:
    yarn dev
    ```
 
-4. **Open your browser**
+5. **Open your browser**
    
    The application will be running at `http://localhost:5173`
 
@@ -89,6 +115,13 @@ This application uses the [CoinGecko API](https://www.coingecko.com/en/api/docum
 Crypto-Tracker/
 ├── public/
 │   └── index.html
+├── screenshots/
+│   ├── desktop-view.png
+│   ├── mobile-view.png
+│   ├── search-feature.png
+│   └── video-thumbnail.png
+├── demo/
+│   └── crypto-tracker-demo.mp4
 ├── src/
 │   ├── components/
 │   │   ├── CoinList/
@@ -97,9 +130,11 @@ Crypto-Tracker/
 │   ├── services/
 │   │   └── api.js
 │   ├── styles/
-│   │   └── App.css
+│   │   └── index.css
 │   ├── App.jsx
 │   └── main.jsx
+├── tailwind.config.js
+├── postcss.config.js
 ├── package.json
 ├── vite.config.js
 └── README.md
@@ -114,10 +149,58 @@ In the project directory, you can run:
 - `npm run preview` - Preview the production build
 - `npm run lint` - Run ESLint to check code quality
 
+## 🎯 Key Features Implementation
+
+### Real-time Data Fetching
+```javascript
+useEffect(() => {
+  const fetchCryptoData = async () => {
+    try {
+      const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false');
+      const data = await response.json();
+      setCryptoData(data);
+    } catch (error) {
+      console.error('Error fetching crypto data:', error);
+    }
+  };
+
+  fetchCryptoData();
+  const interval = setInterval(fetchCryptoData, 30000); // Update every 30 seconds
+
+  return () => clearInterval(interval);
+}, []);
+```
+
 ### Search Functionality
 - Filter cryptocurrencies by name or symbol
 - Real-time search results
 - Case-insensitive matching
+
+### Tailwind CSS Configuration
+
+Make sure your `tailwind.config.js` is configured properly:
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+And your main CSS file (`src/index.css`) includes Tailwind directives:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
 ## 📊 Data Displayed
 
@@ -127,6 +210,54 @@ In the project directory, you can run:
 - **Market Cap**
 - **24h Trading Volume**
 - **Circulating Supply**
+
+## 📷 How to Add Screenshots and Video
+
+### Taking Screenshots
+
+1. **Desktop Screenshots**: 
+   - Take full-page screenshots at 1920x1080 resolution
+   - Show the main dashboard with crypto data
+   - Capture search functionality in action
+
+2. **Mobile Screenshots**:
+   - Use responsive design mode in browser dev tools
+   - Take screenshots at 375x667 (iPhone SE) or similar
+   - Show mobile navigation and responsive layout
+
+### Recording Demo Video
+
+1. **Screen Recording**:
+   - Use tools like OBS Studio, Loom, or QuickTime
+   - Record at 1080p resolution
+   - Keep video under 2 minutes
+   - Show key features: browsing, searching, real-time updates
+
+2. **Video Optimization**:
+   - Convert to MP4 format
+   - Compress for web (aim for under 10MB)
+   - Create a thumbnail image (1280x720)
+
+### File Organization
+
+```
+screenshots/
+├── desktop-view.png       # Main dashboard view
+├── mobile-view.png        # Mobile responsive view  
+├── search-feature.png     # Search functionality
+└── video-thumbnail.png    # Video preview image
+
+demo/
+└── crypto-tracker-demo.mp4  # Demo video file
+```
+
+### Recommended Screenshot Content
+
+- **Homepage**: Show the crypto list with prices and changes
+- **Search Results**: Demonstrate the search functionality
+- **Responsive Design**: Mobile view showing adaptability
+- **Loading States**: Show how data loads and updates
+- **Dark/Light Mode**: If implemented, show theme switching
 
 ## 🔧 Customization
 
@@ -177,7 +308,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Amresh Chaurasiya**
+**Amresh Kumar**
 - GitHub: [@Amresh-01](https://github.com/Amresh-01)
 
 ## 🙏 Acknowledgments
