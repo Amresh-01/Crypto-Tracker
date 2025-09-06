@@ -1,8 +1,6 @@
 import React from "react";
 import { Loader } from "lucide-react";
 
-// ✅ Removed TypeScript annotation: React.FC
-
 const LoadingSpinner = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center">
